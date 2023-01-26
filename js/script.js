@@ -27,6 +27,7 @@ let pokemonList = [
     }
 ];
 
+//Loop 'for' with conditional statement. Leaving only the height of each pokemon and stating only 1 that is big.
 for (let i = 0; i < pokemonList.length; i++){
     if (pokemonList[i].height >= 1.5){
         document.write('<p>' + pokemonList[i].name + ' (height:' + pokemonList[i].height + ')' + ' - Wow that is a big Pokemon' + '</p>')
@@ -36,18 +37,3 @@ for (let i = 0; i < pokemonList.length; i++){
         document.write('<p>' + pokemonList[i].name + ' (height:' + pokemonList[i].height + ')')// + ' - That is a small Pokemon' + '</p>')
     }
 }
-
-
-
-
-//Loop 'for' is used
-/*for (let index = 0; index < pokemonList.length; index++){
-    if (pokemonList[i].height >= 1.5){ //DevTools shows that i is not defined?
-        document.write(pokemonList[i].name + pokemonList[i].height + ' Wow, that is a big pokemon!' + '<br>');
-    } else if (pokemonList[i].height == 0.6){
-        document.write(pokemonList[i].name + pokemonList[i].height + ' That is a medium Pokemon' + '<br>');
-    } else {
-        document.write(pokemonList[i].name + pokemonList[i].height + ' That is a small Pokemon' + '<br>');
-    }
-}
-*/
