@@ -29,11 +29,11 @@ let pokemonList = [
 
 for (let i = 0; i < pokemonList.length; i++){
     if (pokemonList[i].height >= 1.5){
-        document.write('<p>' + pokemonList[i].name + ' - Wow that is a big Pokemon' + '</p>')
+        document.write('<p>' + pokemonList[i].name + ' (height:' + pokemonList[i].height + ')' + ' - Wow that is a big Pokemon' + '</p>')
     }else if (pokemonList[i].height === 0.6){
-        document.write('<p>' + pokemonList[i].name + ' - That is a medium Pokemon' + '</p>')
+        document.write('<p>' + pokemonList[i].name + ' (height:' + pokemonList[i].height + ')')// + ' - That is a medium Pokemon' + '</p>')
     }else {
-        document.write('<p>' + pokemonList[i].name + ' - That is a small Pokemon' + '</p>')
+        document.write('<p>' + pokemonList[i].name + ' (height:' + pokemonList[i].height + ')')// + ' - That is a small Pokemon' + '</p>')
     }
 }
 
