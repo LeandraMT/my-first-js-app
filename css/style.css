@@ -3,24 +3,17 @@
 }
 
 body {
-    background-color: lightcyan;
+    background-color: lightgrey;
     color: black;
-}
-
-.logo {
-    width: 100%;
-}
-
-p {
-    font-size: 20px;
     font-weight: 400;
-    display: flex;
-    justify-content: center;
-    margin: 50px;
 }
-/*
-.squirtle:hover {
-    text-shadow: 2px 2px 5px #004304;
-    cursor: pointer;
+/*.pokemon-logo {
+    text-align: center;
+}*/
+.button-list {
+    border: 1px solid #353421;
+    margin: 20px;
+    padding: 12px;
+    background-color: white;
+    text-align: center;
 }
-*/

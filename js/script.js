@@ -1,5 +1,4 @@
-// This will be the five Pokemons used
-// IIFE
+// Getting the Pokemons from (https://pokedex.org/)
 let pokemonRepository = (function(){
     let pokemonList = [
         {
@@ -29,41 +28,34 @@ let pokemonRepository = (function(){
         }
     ]
 
-    function add(pokemon){
+        function add(pokemon){
         pokemonList.push(pokemon);
-    }
-    function getAll(){
+        }
+
+        function getAll(){
         return pokemonList;
-    }
-    return {
+        }
+
+        function addListItem(pokemon){
+            let pokemonList = document.querySelector('.pokemon-list');
+            let pokemonListItem = document.createElement('li');
+            let button = document.createElement('button');
+                button.innerText = pokemon.name;
+                button.classList.add('button-list');
+                pokemonListItem.appendChild(button);
+                pokemonList.appendChild(pokemonListItem);
+        }
+
+        return {
         add: add,
-        getAll: getAll
-    }
+        getAll: getAll,
+        addListItem: addListItem
+        };
 })();
 
-/* before the forEach Loop
-for (let i = 0; i < pokemonList.length; i++){
-    if (pokemonList[i].height >= 1.5){
-        document.write('<p class="squirtle">' + pokemonList[i].name + ' (height:' + pokemonList[i].height + ')' + ' - Wow that is a big Pokémon!' + '</p>')
-    }else if (pokemonList[i].height === 0.6){
-        document.write('<p>' + pokemonList[i].name + ' (height:' + pokemonList[i].height + ')')// + ' - That is a medium Pokemon' + '</p>')
-    }else {
-        document.write('<p>' + pokemonList[i].name + ' (height:' + pokemonList[i].height + ')')// + ' - That is a small Pokemon' + '</p>')
-    }
-}
-*/
-
-// forEach loop
-pokemonList.forEach(function(pokemon){
-    if (pokemonList.height >= 1.5){
-        document.write('<p class="squirtle">' + pokemonList.name + ' (height:' + pokemonList.height + ')' + ' - Wow that is a big Pokémon!' + '</p>')
-    }else if (pokemonList.height === 0.6){
-        document.write('<p>' + pokemonList.name + ' (height:' + pokemonList.height + ')')// + ' - That is a medium Pokemon' + '</p>')
-    }else {
-        document.write('<p>' + pokemonList.name + ' (height:' + pokemonList.height + ')')// + ' - That is a small Pokemon' + '</p>')
-    }
-});
+//uncommenting the following code as it shows 'object' within the index.html file?
+//document.write(pokemonRepository.getAll());
 
 pokemonRepository.getAll().forEach(function(pokemon){
-    document.write(pokemon.name + pokemon.height);
+    pokemonRepository.addListItem(pokemon);
 });
