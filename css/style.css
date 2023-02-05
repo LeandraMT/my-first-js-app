@@ -5,11 +5,7 @@
 body {
     background-color: lightgrey;
     color: black;
-    font-weight: 400;
 }
-/*.pokemon-logo {
-    text-align: center;
-}*/
 .button-list {
     border: 1px solid #353421;
     margin: 20px;

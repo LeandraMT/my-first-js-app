@@ -44,6 +44,15 @@ let pokemonRepository = (function(){
                 button.classList.add('button-list');
                 pokemonListItem.appendChild(button);
                 pokemonList.appendChild(pokemonListItem);
+
+                //Adding event listener to button & event handler
+                button.addEventListener('click', function(event){
+                    showDetails(pokemon);
+                })
+        }
+
+        function showDetails(pokemon){
+            console.log(pokemon)
         }
 
         return {
