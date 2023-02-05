@@ -1,15 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Raleway:wght@300;400&family=Work+Sans:wght@300&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: lightgrey;
-    color: black;
+    background-color: #446168;
+    color: #aaa739;
+    font-family: 'M PLUS 1P', 'Raleway', 'Sans';
 }
+
+/*Styling Heading 1*/
+h1 {
+    font-size: 40px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+/*Styling buttons of each pokemon*/
 .button-list {
-    border: 1px solid #353421;
+    font-family: inherit;
+    font-size: 15px;
+    border: 1px solid #aaa739;
     margin: 20px;
     padding: 12px;
-    background-color: white;
+    border-radius: 8px;
+    background-color: #446168;
+    color: white;
+    text-align: center;
+}
+.pokemon-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+/*Styling the search list and sort button*/
+input {
+    border: 2px solid #ccc;
+    margin: 10px;
+    padding: 7px;
+    border-radius: 8px;
+    font-family: inherit;
+}
+input:focus {
+    outline: none;
+    border: 2px solid #aaa739;
+}
+.sort {
+    border: none;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #757208;
+    color: white;
+    font-family: inherit;
+}
+.search-bar {
     text-align: center;
 }

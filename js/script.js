@@ -51,6 +51,11 @@ let pokemonRepository = (function(){
                 })
         }
 
+        //Function for search and sort buttons to inherit font-family
+        function fontFamily(){
+            document.querySelector('input').style.fontFamily = 'inherit';
+        }
+
         function showDetails(pokemon){
             console.log(pokemon)
         }
