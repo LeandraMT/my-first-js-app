@@ -58,6 +58,11 @@ input:focus {
     color: white;
     font-family: inherit;
 }
+.sort:hover {
+    outline: none;
+    background-color: #555302;
+    cursor: pointer;
+}
 .search-bar {
     text-align: center;
 }
