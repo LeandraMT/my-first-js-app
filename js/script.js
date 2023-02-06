@@ -50,12 +50,7 @@ let pokemonRepository = (function(){
                     showDetails(pokemon);
                 })
         }
-
-        //Function for search and sort buttons to inherit font-family
-        function fontFamily(){
-            document.querySelector('input').style.fontFamily = 'inherit';
-        }
-
+        
         function showDetails(pokemon){
             console.log(pokemon)
         }
@@ -73,3 +68,9 @@ let pokemonRepository = (function(){
 pokemonRepository.getAll().forEach(function(pokemon){
     pokemonRepository.addListItem(pokemon);
 });
+
+//Inserting an image - commenting it out for later
+//let img = document.createElement('img');
+//img.src = 'https://i.pinimg.com/236x/4a/73/d5/4a73d540a85b5002cd4375bad778cbbb.jpg?nii=t';
+//var src= document.querySelector('images');
+//src.appendChild(img);
