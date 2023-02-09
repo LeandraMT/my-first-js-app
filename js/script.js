@@ -7,6 +7,7 @@ let pokemonRepository = (function(){
         if (
             typeof pokemon === 'object' &&
             'name' in pokemon //&&
+        //    'detailsUrl' in pokemon
         //  'height' in pokemon &&
         //    'type' in pokemon 
         ) {
@@ -37,7 +38,9 @@ let pokemonRepository = (function(){
 
         //Adding the two functions loadList and loadDetails for the pokemon api
         function loadList(){
-            return fetch(apiURL).then(function(response){
+            return fetch(apiURL, {
+                method: 'GET'
+            }).then(function(response){
                 return response.json();
             }).then(function(json){
                 json.results.forEach(function(item){
@@ -54,8 +57,10 @@ let pokemonRepository = (function(){
         }
 
         function loadDetails(item){
-            let url = item.detailsURL;
-            return fetch(url).then(function(response){
+    //    let url = item.detailsURL;
+            fetch(apiUrl, {
+                method: 'GET'
+            }).then(function(response){
                 return response.json();
             }).then(function(details){
                 //adding the details of the pokemons
