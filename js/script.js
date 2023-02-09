@@ -4,7 +4,16 @@ let pokemonRepository = (function(){
     let apiURL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
         function add(pokemon){
-        pokemonList.push(pokemon);
+        if (
+            typeof pokemon === 'object' &&
+            'name' in pokemon //&&
+        //  'height' in pokemon &&
+        //    'type' in pokemon 
+        ) {
+            pokemonList.push(pokemon);
+        } else {
+            console.log('Pokemon is not correct');
+        }
         }
 
         function getAll(){
@@ -37,6 +46,7 @@ let pokemonRepository = (function(){
                         loadDetails: item.url
                     };
                     add(pokemon);
+                    console.log(pokemon);
                 });
             }).catch(function(e){
                 console.error(e);

@@ -32,6 +32,10 @@ h1 {
     color: white;
     text-align: center;
 }
+.button-list:hover {
+    border: 1px solid #555302;
+    cursor: pointer;
+}
 .pokemon-list {
     list-style-type: none;
     margin: 0;
