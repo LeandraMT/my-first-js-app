@@ -30,9 +30,16 @@ let pokemonRepository = (function(){
 
         //Adding the two functions loadList and loadDetails for the pokemon api
         function loadList(){
-            return fetch(apiURL, {
-                method: 'GET'
-            }).then(function(response){
+            return fetch(apiURL,
+
+            //Fixing the CORS policy issue    
+                {
+                    method: 'GET',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }).then(function(response){
                 return response.json();
             }).then(function(json){
                 json.results.forEach(function(item){
@@ -48,8 +55,18 @@ let pokemonRepository = (function(){
         }
 
         function loadDetails(pokemon){
-        let url = pokemon.detailsURL;
-            return fetch(url).then(function(response){
+//      let url = pokemon.detailsURL;
+            return fetch(apiUrl,
+
+            //Fixing the CORS policy issue    
+                {
+                    method: 'GET',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }
+                ).then(function(response){
                 return response.json();
             }).then(function(details){
                 //adding the details of the pokemons
