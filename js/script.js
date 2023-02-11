@@ -55,7 +55,7 @@ let pokemonRepository = (function(){
         }
 
         function loadDetails(pokemon){
-//      let url = pokemon.detailsURL;
+          let url = pokemon.detailsURL;
             return fetch(apiUrl,
 
             //Fixing the CORS policy issue    
