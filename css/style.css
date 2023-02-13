@@ -96,3 +96,32 @@ input:focus {
 .search-bar {
     text-align: center;
 }
+
+
+
+/*Responsive design*/
+@media all and (max-width: 350px){
+    h1 {
+        font-size: 35px;
+        margin: 30px;
+        padding: 20px;
+    }
+    .button-list {
+        height: 30px;
+    }
+    input {
+        height: 24px;
+    }
+    button .sort {
+        height: 24px;
+        padding: 6px;
+    }
+}
+@media all and (min-width: 350px) and (max-width:600px){
+    h1 {
+        font-size: 40px;
+    }
+    .search-bar {
+        display: relative;
+    }
+}
