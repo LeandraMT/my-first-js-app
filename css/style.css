@@ -17,10 +17,14 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     background-color: var(--backgroundColor);
     font-family: 'M PLUS 1P', 'Raleway', 'Sans';
 }
+
+
 
 /*Styling Heading 1*/
 h1 {
@@ -32,6 +36,8 @@ h1 {
     margin-bottom: 40px;
     padding: 20px;
 }
+
+
 
 /*Styling buttons of each pokemon*/
 .button-list {
@@ -49,11 +55,18 @@ h1 {
     border: 1px solid var(--hoverColor);
     cursor: pointer;
 }
+
+
+
+/*Styling for the pokemon List*/
 .pokemon-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+
+
+
 /*Styling the search list and sort button*/
 input {
     border: 2px solid var(--inputBorderColor);

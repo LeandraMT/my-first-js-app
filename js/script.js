@@ -28,6 +28,7 @@ let pokemonRepository = (function(){
                 })
         }
 
+
         //Adding the two functions loadList and loadDetails for the pokemon api
         function loadList(){
             return fetch(apiURL).then(function(response){
@@ -58,6 +59,7 @@ let pokemonRepository = (function(){
                 console.error(e);
             });
         }
+        
 
         //Getting the details when a user clicks on a pokemon
         function showDetails(pokemon){
