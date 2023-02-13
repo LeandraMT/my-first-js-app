@@ -1,7 +1,7 @@
 // Getting the Pokemons from (https://pokedex.org/)
 let pokemonRepository = (function(){
     let pokemonList = [];
-    let apiURL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let apiURL ='https://pokeapi.co/api/v2/pokemon/?limit=150';
 
         function add(pokemon){
         pokemonList.push(pokemon)
@@ -30,16 +30,7 @@ let pokemonRepository = (function(){
 
         //Adding the two functions loadList and loadDetails for the pokemon api
         function loadList(){
-            return fetch(apiURL,
-
-            //Fixing the CORS policy issue    
-                {
-                    method: 'GET',
-                    mode: 'cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                }).then(function(response){
+            return fetch(apiURL).then(function(response){
                 return response.json();
             }).then(function(json){
                 json.results.forEach(function(item){
@@ -56,17 +47,7 @@ let pokemonRepository = (function(){
 
         function loadDetails(pokemon){
           let url = pokemon.detailsURL;
-            return fetch(apiUrl,
-
-            //Fixing the CORS policy issue    
-                {
-                    method: 'GET',
-                    mode: 'cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    }
-                }
-                ).then(function(response){
+            return fetch(apiURL).then(function(response){
                 return response.json();
             }).then(function(details){
                 //adding the details of the pokemons
