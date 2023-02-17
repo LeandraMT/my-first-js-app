@@ -60,11 +60,21 @@ let pokemonRepository = (function(){
             });
         }
         
+        //Setting the modal for when user clicks on the pokemon name
+        function showPokemonModal(name, height, img){
+
+            //creating a new div for the modal container
+            let modalContainer = document.createElement('div');
+            modalContainer.classList.add('modal-container');
+
+            //creating the content within the modal
+            
+        }
 
         //Getting the details when a user clicks on a pokemon
         function showDetails(pokemon){
             loadDetails(pokemon).then(function(){
-                console.log(pokemon);
+           //   console.log(pokemon);
             });
         }
 

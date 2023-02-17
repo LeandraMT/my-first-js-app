@@ -43,7 +43,7 @@ h1 {
     font-family: inherit;
     font-size: 15px;
     border: 1px solid var(--mainColor);
-    width: 40%;
+    max-width: 40%;
     margin: 20px;
     padding: 12px;
     border-radius: 8px;
@@ -101,8 +101,15 @@ input:focus {
         margin: 30px;
         padding: 20px;
     }
+    /*Need to check why it is not working*/
+    ul .pokemon-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
     .button-list {
         height: 30px;
+        max-width: 50%;
     }
     input {
         height: 24px;
@@ -118,5 +125,13 @@ input:focus {
     }
     .search-bar {
         display: relative;
+    }
+    .button-list {
+        max-width: 80%;
+    }
+}
+@media all and (min-width:600px) and (max-width:850px){
+    .button-list {
+        max-width: 50%;
     }
 }
