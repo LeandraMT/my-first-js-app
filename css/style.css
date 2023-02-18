@@ -98,6 +98,20 @@ ul {
 }
 .modal-container, h1, p {
     text-transform: uppercase;
+    font-weight: 300;
+}
+.close-button {
+    font-family: inherit;
+    font-size: 15px;
+    border: 1px solid var(--mainColor);
+    float: left;
+    border-radius: 8px;
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+}
+.close-button:hover{
+    cursor: pointer;
+    background-color: var(--hoverColor);
 }
 
 

@@ -70,12 +70,6 @@ let pokemonRepository = (function(){
                 let modal = document.createElement('div');
                 modal.classList.add('modal-container');
     
-                //creating the close button for the modal
-                let closeButton = document.createElement('button');
-                closeButton.classList.add('close-button');
-                closeButton.innerText = 'Close';
-                closeButton.addEventListener('click', hidePokemonModal);
-    
                 //creating the content within the modal
                 let pokemonName = document.createElement('h3');
                 pokemonName.innerText = pokemon.name;
@@ -88,13 +82,19 @@ let pokemonRepository = (function(){
     
                 let pokemonImage = document.createElement('img');
                 pokemonImage.innerText = pokemon.imageUrl;
+
+                //creating the close button for the modal
+                let closeButton = document.createElement('button');
+                closeButton.classList.add('close-button');
+                closeButton.innerText = 'Close';
+                closeButton.addEventListener('click', hidePokemonModal);
     
                 //appending the above statements to the modal container
-                modal.appendChild(closeButton);
                 modal.appendChild(pokemonName);
                 modal.appendChild(pokemonHeight);
                 modal.appendChild(pokemonType);
                 modal.appendChild(pokemonImage);
+                modal.appendChild(closeButton);
                 modalContainer.appendChild(modal);
     
                 //creating a class for when to show the modal container
