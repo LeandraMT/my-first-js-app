@@ -1,7 +1,7 @@
 // Getting the Pokemons from (https://pokedex.org/)
 let pokemonRepository = (function(){
     let pokemonList = [];
-    let apiURL ='https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let apiURL ='https://pokeapi.co/api/v2/pokemon/?limit=10';
 
         function add(pokemon){
         pokemonList.push(pokemon)
@@ -47,15 +47,16 @@ let pokemonRepository = (function(){
         }
 
         function loadDetails(pokemon){
-          let url = pokemon.loadDetails;
+        //    console.log(pokemon);
+            let url = pokemon.loadDetails;
             return fetch(url).then(function(response){
                 return response.json();
             }).then(function(details){
                 //adding the details of the pokemons
-                console.log(details);
+            //    console.log(details);
                 pokemon.imageUrl = details.sprites.front_default;
                 pokemon.height = details.height;
-                pokemon.types = details.types;
+                pokemon.types = details.types.map(type => type.type.name);
             }).catch(function(e){
                 console.error(e);
             });
@@ -65,7 +66,7 @@ let pokemonRepository = (function(){
         let modalContainer = document.querySelector('#modal_container');
 
             function showPokemonModal(pokemon){
-
+                console.log(pokemon);
                 //creating a new div for the modal container
                 let modal = document.createElement('div');
                 modal.classList.add('modal-container');
@@ -80,8 +81,8 @@ let pokemonRepository = (function(){
                 let pokemonType = document.createElement('p');
                 pokemonType.innerText = pokemon.types;
     
-                let pokemonImage = document.createElement('img');
-                pokemonImage.innerText = pokemon.imageUrl;
+             /*   let pokemonImage = document.createElement('img');
+                pokemonImage.innerText = pokemon.imageUrl;*/
 
                 //creating the close button for the modal
                 let closeButton = document.createElement('button');
@@ -93,7 +94,7 @@ let pokemonRepository = (function(){
                 modal.appendChild(pokemonName);
                 modal.appendChild(pokemonHeight);
                 modal.appendChild(pokemonType);
-                modal.appendChild(pokemonImage);
+            //    modal.appendChild(pokemonImage);
                 modal.appendChild(closeButton);
                 modalContainer.appendChild(modal);
     
@@ -109,7 +110,8 @@ let pokemonRepository = (function(){
             //Getting the details when a user clicks on a pokemon
         function showDetails(pokemon){
             loadDetails(pokemon).then(function(){
-                showPokemonModal(pokemon);
+               showPokemonModal(pokemon);
+            //   console.log(pokemon);
             });
         };
 
@@ -119,6 +121,9 @@ let pokemonRepository = (function(){
         addListItem: addListItem,
         loadList: loadList,
         loadDetails: loadDetails,
+        showDetails: showDetails,
+        showPokemonModal: showPokemonModal,
+        
         };
 })();
 
