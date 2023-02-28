@@ -70,10 +70,11 @@ ul {
     padding: 0;
 }
 
+
 /*Styling the showPokemonModal created from JS*/
-/*#modal_container {
+#modal_container {
     display: none;
-}*/
+}
 
 #modal_container.is-visible {
     position: fixed;
@@ -113,6 +114,7 @@ ul {
     cursor: pointer;
     background-color: var(--hoverColor);
 }
+
 
 
 /*Styling the search list*/
