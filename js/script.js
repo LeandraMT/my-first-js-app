@@ -23,7 +23,7 @@ let pokemonRepository = (function(){
                 pokemonList.appendChild(pokemonListItem);
 
                 //Adding event listener to button & event handler
-                button.addEventListener('click', function(event){
+                button.addEventListener('click', function(){
                     showDetails(pokemon);
                 })
         }
@@ -80,9 +80,6 @@ let pokemonRepository = (function(){
     
                 let pokemonType = document.createElement('p');
                 pokemonType.innerText = pokemon.types;
-    
-             /*   let pokemonImage = document.createElement('img');
-                pokemonImage.innerText = pokemon.imageUrl;*/
 
                 //creating the close button for the modal
                 let closeButton = document.createElement('button');
@@ -94,18 +91,33 @@ let pokemonRepository = (function(){
                 modal.appendChild(pokemonName);
                 modal.appendChild(pokemonHeight);
                 modal.appendChild(pokemonType);
-            //    modal.appendChild(pokemonImage);
                 modal.appendChild(closeButton);
                 modalContainer.appendChild(modal);
     
                 //creating a class for when to show the modal container
                 modalContainer.classList.add('is-visible');
+
+                //adding the function for when user clicks outside of the modal
+                modalContainer.addEventListener('click', (e) => {
+                    let target = e.target;
+                    if(target === modalContainer){
+                        hidePokemonModal();
+                    }
+                });
             }
 
             //creating the function to hide the pokemon modal
             function hidePokemonModal(){
                 modalContainer.classList.remove('is-visible');
             }
+
+            //adding the function for when user presses ESC to hide modal
+            window.addEventListener('keydown', (e) => {
+                let modalContainer = document.querySelector('#modal_container');
+                if(e.key === 'Escape' && modalContainer.classList.contains('is-visible')){
+                    hidePokemonModal();
+                }
+            })
 
             //Getting the details when a user clicks on a pokemon
         function showDetails(pokemon){
