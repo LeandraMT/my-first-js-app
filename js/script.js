@@ -47,13 +47,11 @@ let pokemonRepository = (function(){
         }
 
         function loadDetails(pokemon){
-        //    console.log(pokemon);
             let url = pokemon.loadDetails;
             return fetch(url).then(function(response){
                 return response.json();
             }).then(function(details){
                 //adding the details of the pokemons
-            //    console.log(details);
                 pokemon.imageUrl = details.sprites.front_default;
                 pokemon.height = details.height;
                 pokemon.types = details.types.map(type => type.type.name);
@@ -123,7 +121,6 @@ let pokemonRepository = (function(){
         function showDetails(pokemon){
             loadDetails(pokemon).then(function(){
                showPokemonModal(pokemon);
-            //   console.log(pokemon);
             });
         };
 
