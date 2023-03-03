@@ -88,7 +88,7 @@ ul {
     display: grid;
     text-align: center;
 }
-.modal-container {
+.pokemon-modal {
     background-color: var(--backgroundColor);
     color: var(--textColor);
     margin: auto;
@@ -97,7 +97,7 @@ ul {
     width: 100%;
     max-width: 700px;
 }
-.modal-container, h1, p {
+.pokemon-modal, h1, p {
     text-transform: uppercase;
     font-weight: 300;
 }
