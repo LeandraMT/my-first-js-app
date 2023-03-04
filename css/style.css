@@ -117,7 +117,10 @@ ul {
 
 
 
-/*Styling the search list*/
+/*Styling the Navigation Bar*/
+.navbar a {
+    color: var(--mainColor);
+}
 div .search-bar {
     margin-top: 0 auto;
     margin-bottom: 20px;
@@ -136,14 +139,14 @@ input:focus {
 .search-bar {
     text-align: center;
 }
-.search-btn {
+ .d-flex button {
     border: none;
     border-radius: 4px;
-    padding: 5px 10px;
+    padding: 0 auto;
     background-color: var(--buttonBackgroundColor);
     color: #fff;
 }
-.search-btn:hover {
+.d-flex button:hover {
     cursor: pointer;
     border: 1px solid var(--hoverColor);
 }

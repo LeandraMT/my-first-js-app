@@ -16,13 +16,41 @@
         <h1>Pokedex</h1>
 
 
-        <!--Code for the search bar-->
-        <div>
-            <div class="search-bar">
-                <input class="search" placeholder="Search Pokémon"/>
-                <button class="search-btn">Search</button>
+        <!--Bootstrap Navigation Bar-->
+        <nav class="navbar navbar-expand-md bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Pokédex</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pokemons</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Play
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Games and Apps</a></li>
+                      <li><a class="dropdown-item" href="#">Trading Cards Game</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Updates</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search pokemon" aria-label="Search">
+                  <button type="submit" class="btn btn-outline-secondary">Search</button>
+                </form>
+              </div>
             </div>
-        </div>
+          </nav>
+        
             
 
         <!--The Pokemon list-->

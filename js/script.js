@@ -46,7 +46,7 @@ let pokemonRepository = (function(){
             })
         }
 
-        function loadDetails(pokemon){
+        function loadPokemonDetails(pokemon){
             let url = pokemon.loadDetails;
             return fetch(url).then(function(response){
                 return response.json();
@@ -137,15 +137,16 @@ let pokemonRepository = (function(){
         getAll: getAll,
         addListItem: addListItem,
         loadList: loadList,
-        loadDetails: loadDetails,
+        loadPokemonDetails: loadPokemonDetails,
         showDetails: showDetails,
         showPokemonModal: showPokemonModal,
         
         };
+
 });
 
-pokemonRepository.loadDetails().then(function(){
+pokemonRepository.loadPokemonDetails().then(function(){
     pokemonRepository.getAll().forEach(function(pokemon){
         pokemonRepository.addListItem(pokemon);
     });
-})();
+});
