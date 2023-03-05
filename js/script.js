@@ -2,6 +2,7 @@
 let pokemonRepository = (function(){
     let pokemonList = [];
     let apiURL ='https://pokeapi.co/api/v2/pokemon/?limit=10';
+    let modalContainer = document.querySelector('#modal_container');
 
         function add(pokemon){
         pokemonList.push(pokemon)
@@ -62,7 +63,8 @@ let pokemonRepository = (function(){
         
         //Function for the modal when user clicks on the pokemon name
         function showPokemonModal(pokemon){
-            let modalContainer = document.querySelector('#modal_container');
+
+            modalContainer.innerHTML = '';
             
             //creating a new div with the details of the pokemon for the modal container
             let modal = document.createElement('div');
@@ -72,7 +74,7 @@ let pokemonRepository = (function(){
             pokemonName.innerText = pokemon.name;
 
             let pokemonImage = document.createElement('img');
-            pokemonImage.innerText = pokemon.imageUrl;
+            pokemonImage.src = pokemon.imageUrl;
 
             let pokemonHeight = document.createElement('p');
             pokemonHeight.innerText = pokemon.height;
@@ -87,7 +89,6 @@ let pokemonRepository = (function(){
 
             //adding the event listener to the close button of the modal
             closeButtonModal.addEventListener("click",function(){
-                location.reload()
                 hidePokemonModal()
                 });
 
@@ -127,7 +128,7 @@ let pokemonRepository = (function(){
 
             //Getting the details when a user clicks on a pokemon
             function showDetails(pokemon){
-            loadDetails(pokemon).then(function(){
+            loadPokemonDetails(pokemon).then(function(){
                showPokemonModal(pokemon);
             });
         };
@@ -143,9 +144,9 @@ let pokemonRepository = (function(){
         
         };
 
-});
+})();
 
-pokemonRepository.loadPokemonDetails().then(function(){
+pokemonRepository.loadList().then(function(){
     pokemonRepository.getAll().forEach(function(pokemon){
         pokemonRepository.addListItem(pokemon);
     });
