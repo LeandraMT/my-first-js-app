@@ -27,14 +27,14 @@ body {
 
 
 /*Styling Heading 1*/
-h1 {
+/*h1 {
     font-size: 40px;
     color: var(--mainColor);
     display: block;
     text-align: center;
     margin-top: 20px;
     padding: 20px;
-}
+}*/
 
 
 
@@ -59,9 +59,8 @@ h1 {
 
 
 /*Styling for the pokemon List*/
-ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.list-group-item {
+    background-color: var(--backgroundColor);
     text-align: center;
 }
 .pokemon-list {
@@ -72,7 +71,7 @@ ul {
 
 
 /*Styling the showPokemonModal created from JS*/
-#modal_container {
+/*#modal_container {
     display: none;
 }
 
@@ -113,51 +112,27 @@ ul {
 .close-button:hover{
     cursor: pointer;
     background-color: var(--hoverColor);
-}
+}*/
 
 
 
 /*Styling the Navigation Bar*/
 .navbar a {
     color: var(--mainColor);
-}
-div .search-bar {
-    margin-top: 0 auto;
-    margin-bottom: 20px;
-}
-.form-control {
-    border: 2px solid var(--inputBorderColor);
-    margin: 7px;
-    padding: 5px;
-    border-radius: 8px;
-    font-family: inherit;
-}
-.form-control:focus {
-    outline: none;
-    border: 2px solid var(--mainColor);
-}
- .btn-search {
-    border: none;
-    background-color: var(--buttonBackgroundColor);
-    border-radius: 9px;
-    color: #fff;
-}
-.btn-search:hover {
-    cursor: pointer;
-    opacity: 0.7;
+    font-weight: bold;
 }
 
 
 
 /*Responsive design*/
-@media all and (max-width: 350px){
+/*@media all and (max-width: 350px){
     h1 {
         font-size: 35px;
         margin: 30px;
         padding: 20px;
     }
     /*Need to check why it is not working*/
-    ul .pokemon-list {
+    /*ul .pokemon-list {
         display: grid;
         grid-template-columns: 1fr 1fr;
         text-align: center;
@@ -189,4 +164,4 @@ div .search-bar {
     .button-list {
         max-width: 50%;
     }
-}
+}*/
