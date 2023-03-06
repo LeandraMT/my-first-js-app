@@ -1,7 +1,7 @@
 // Getting the Pokemons from (https://pokedex.org/)
 let pokemonRepository = (function(){
     let pokemonList = [];
-    let apiURL ='https://pokeapi.co/api/v2/pokemon/?limit=10';
+    let apiURL ='https://pokeapi.co/api/v2/pokemon/?limit=100';
     let modalContainer = document.querySelector('#modal_container');
 
         function add(pokemon){
