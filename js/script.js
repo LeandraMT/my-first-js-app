@@ -64,14 +64,15 @@ let pokemonRepository = (function(){
         
         //Function for the modal when user clicks on the pokemon name
         function showPokemonModal(pokemon){
-            let modalHeader = document.querySelector('.modal-header');
-            let modalTitle = document.querySelector('.modal-title');
+            //let modalHeader = document.querySelector('.modal-header');
             let modalBody = document.querySelector('.modal-body');
+            let modalTitle = document.querySelector('.modal-title');
+            let modalHeader = document.querySelector('.modal-header');
 
-            //modalTitle.innerHTML = '';
-            //modalBody.innerHTML = '';
+            modalTitle.innerHTML = '';
+            modalBody.innerHTML = '';
 
-            //creating the name for it to appear on the modal
+            //creating the elements for it to appear on the modal
             let pokemonName = document.createElement('h4');
             pokemonName.innerText = pokemon.name;
 
@@ -81,24 +82,24 @@ let pokemonRepository = (function(){
             let pokemonHeight = document.createElement('p');
             pokemonHeight.innerText = 'Height:' + pokemon.height;
 
-            let pokemonType = document.createElement('p');
-            pokemonType.innerText = 'Type:' + pokemon.types
+            let pokemonTypes = document.createElement('p');
+            pokemonTypes.innerText = 'Type:' + pokemon.types;
 
             //appending the new elements to the modal body
             modalTitle.appendChild(pokemonName);
             modalBody.appendChild(pokemonImage);
             modalBody.appendChild(pokemonHeight);
-            modalBody.appendChild(pokemonType);
+            modalBody.appendChild(pokemonTypes);
         
             
             //the close button for the modal
-            let closeButtonModal = document.querySelector('.btn');
+            //let closeButtonModal = document.querySelector('.btn');
             
 
             //adding the event listener to the close button of the modal
-            closeButtonModal.addEventListener("click",function(){
-                hidePokemonModal()
-                });
+            //closeButtonModal.addEventListener("click",function(){
+                //hidePokemonModal()
+                //});
         }    
 
     
