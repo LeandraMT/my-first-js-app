@@ -101,7 +101,6 @@ let pokemonRepository = (function(){
                 //hidePokemonModal()
                 //});
         }    
-
     
             //creating a class for when to show the modal container
             //modalContainer.classList.add('is-visible');
