@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&400display=swap');
+
+/*Variables*/
+:root {
+    --background: #d3d6db;
+    --textColor: #303841;
+    --hoverColor: #be3144;
+    --buttonColor: #3a4750;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/*Main styling*/
+body {
+    background: var(--background);
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 19px;
+}
+
+/*Button of each pokemons*/
+.button-list {
+    font-family: inherit;
+    font-size: 15px;
+    border: 1px solid var(--buttonColor);
+    max-width: 60%;
+    margin: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--background);
+    text-align: center;
+}
+.button-list:hover {
+    border: 1px solid var(--hoverColor);
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+/*List of the pokemons*/
+.pokemon-list {
+    list-style-type: none;
+    margin-top: 50px;
+    text-align: center;
+    color: var(--textColor);
+}
+
+
+/*Navigation bar from Bootstrap*/
+.page-container {
+    margin-top: 60px;
+}
